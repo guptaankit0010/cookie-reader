@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Cookie Reader",
+  "version": "1.0",
+  "description": "Reads cookies from LinkedIn pages.",
+  "permissions": [
+      "storage",
+      "cookies",
+      "tabs",
+      "activeTab",
+      "scripting"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+      "default_popup": "src/popup.html"
+  },
+  "content_scripts": [
+      {
+          "matches": [
+              "https://www.linkedin.com/*"
+          ],
+          "js": [
+              "build/main.js"
+          ]
+      }
+  ]
+}
